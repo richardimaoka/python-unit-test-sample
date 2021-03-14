@@ -1,11 +1,4 @@
-import unittest
+def func(message):
+  print(message)
 
-def booksearch():
-  return ()
-
-class BookSearchTest(unittest.TestCase):
-  def test_booksearch(self):
-    self.assertEqual((), booksearch())
-
-if __name__ == '__main__':
-  unittest.main()
+func('comnmi chiwa')
