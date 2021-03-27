@@ -21,3 +21,7 @@ def test_member_access():
 ## not a test function, as it doesn't follow the naming convention of test_xxx
 def wazzup():
   assert 1 == 2
+
+class TestMyClass:
+  def test_medhod(self):
+    assert 1 == 2
