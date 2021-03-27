@@ -2,3 +2,5 @@ bin
 lib
 lib64
 __pycache__
+.vscode
+__pycache__
