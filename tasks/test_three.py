@@ -17,3 +17,7 @@ def test_member_access():
   assert t.summary == 'buy milk'
   assert t.owner == 'brain'
   assert (t.done, t.id) == (False, None)
+
+## not a test function, as it doesn't follow the naming convention of test_xxx
+def wazzup():
+  assert 1 == 2
