@@ -19,7 +19,7 @@ def test_some_data(some_data):
 def some_other_data():
     print("some_other_data()")
     """Raise an exception from fixture."""
-    x = 43
+    x = 42
     assert x == 42
     return x
 
