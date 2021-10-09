@@ -13,4 +13,16 @@ items[4] = 'booktrade'
 del items[1]
 print(items)
 
-items[4] = 'booktrade'
+#items[4] = 'booktrade'
+
+print('------------------------')
+items = ('note', 'notebook', 'sketchbook')
+print(type(items))
+print(items)
+
+items = 'note', 'notebook', 'sketchbook'
+print(type(items))
+print(items)
+
+print(())
+print(tuple())
