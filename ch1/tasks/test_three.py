@@ -18,4 +18,6 @@ def test_member_access():
     t = Task('buy milk', 'brian')
     assert t.summary == 'buy milk'
     assert t.owner == 'brian'
+    assert t[0] == 'buy milk' # TypeError: tuple indices must be integers or slices, not str
+    # assert t["summary"] == 'buy milk' # TypeError: tuple indices must be integers or slices, not str
     assert (t.done, t.id) == (False, None)
