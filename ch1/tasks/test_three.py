@@ -2,13 +2,14 @@
 
 from collections import namedtuple
 
-Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'], defaults=[None, None, False, None])
+Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'], defaults=['0', 'a', 'b',  'c', 'd'])
 # Task.__new__.__defaults__ = (None, None, False, None)
 
 
 def test_defaults():
     """Using no parameters should invoke defaults."""
-    t1 = Task()
+    t1 = Task(None)
+    print(t1)
     t2 = Task(None, None, False, None)
     assert t1 == t2
 
