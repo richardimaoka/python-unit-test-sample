@@ -1,5 +1,4 @@
-from collections import namedtuple
-
-Task = namedtuple('Task',
-                  ['summary', 'owner', 'done', 'id'],
-                  defaults=(None, None, False, None))
+from .api import (  # noqa: F401
+    Task,
+    add,
+)
