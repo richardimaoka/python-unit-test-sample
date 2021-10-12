@@ -7,7 +7,6 @@ Task = namedtuple('Task',
                   ['summary', 'owner', 'done', 'id'],
                   defaults=(None, None, False, None))
 
-_tasksdb = None
 
 # custom exceptions
 
@@ -50,3 +49,25 @@ def get(task_id):  # type: (int) -> Task
         raise UninitializedDatabase()
     task_dict = _tasksdb.get(task_id)
     return Task(**task_dict)
+
+
+_tasksdb = None
+
+
+def start_tasks_db(db_path, db_type):  # type: (str, str) -> None
+    """Connect API functions to a db."""
+    if not isinstance(db_path, string_types):
+        raise TypeError('db_path must be a string')
+    global _tasksdb
+    if db_type == 'tiny':
+        import tasks.tasksdb_tinydb
+        _tasksdb = tasks.tasksdb_tinydb.start_tasks_db(db_path)
+    else:
+        raise ValueError("db_type must be 'tiny'")
+
+
+def stop_tasks_db():  # type: () -> None
+    """Disconnect API functions from db."""
+    global _tasksdb
+    _tasksdb.stop_tasks_db()
+    _tasksdb = None
