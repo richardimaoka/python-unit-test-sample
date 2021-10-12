@@ -40,3 +40,13 @@ def add(task):  # type: (Task) -> int
         raise UninitializedDatabase()
     task_id = _tasksdb.add(task._asdict())
     return task_id
+
+
+def get(task_id):  # type: (int) -> Task
+    """Return a Task object with matching task_id."""
+    if not isinstance(task_id, int):
+        raise TypeError('task_id must be an int')
+    if _tasksdb is None:
+        raise UninitializedDatabase()
+    task_dict = _tasksdb.get(task_id)
+    return Task(**task_dict)
