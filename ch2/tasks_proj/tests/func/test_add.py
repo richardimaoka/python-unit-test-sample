@@ -15,7 +15,7 @@ def test_add_reutnrs_valid_id():
     assert isinstance(task_id, int)
 
 
-@pytest.fixture()
+@pytest.fixture(autouse=True)
 def initialized_tasks_db(tmpdir):
     """Connect to db before testing, disconnect after."""
     # Setup : start db
