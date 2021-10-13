@@ -5,7 +5,7 @@ import tasks
 from tasks import Task
 
 
-def test_add_reutnrs_valid_id():
+def test_add_reutnrs_valid_id(initialized_tasks_db):
     """tasks.add(<valid task>) should return an integer."""
     # GIVEN an initialized tasks db
     # WHEN a new task is added
@@ -15,7 +15,7 @@ def test_add_reutnrs_valid_id():
     assert isinstance(task_id, int)
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture()
 def initialized_tasks_db(tmpdir):
     """Connect to db before testing, disconnect after."""
     # Setup : start db
