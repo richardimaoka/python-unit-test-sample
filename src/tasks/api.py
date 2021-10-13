@@ -51,6 +51,13 @@ def get(task_id):  # type: (int) -> Task
     return Task(**task_dict)
 
 
+def count():  # type: (None) -> int
+    """Return the number of tasks in db."""
+    if _tasksdb is None:
+        raise UninitializedDatabase()
+    return _tasksdb.count()
+
+
 _tasksdb = None
 
 
